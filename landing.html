@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Landing Page - Password Required</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* 
+            Set the background image for the whole page.
+            Replace 'YOUR_IMAGE_PATH_HERE' with your image file name or full path.
+            Examples:
+                - If image is in same folder: url('bg.jpg')
+                - If image is elsewhere: url('C:/Users/14243/Desktop/bg.jpg')
+        */
+        body, html {
+    height: 100%;
+     margin: 0;
+     font-family: Arial, sans-serif;
+    background: url('pomhk.JPG') no-repeat center center fixed;
+    background-size: cover;
+}
+        }
+
+        /* Center the password box vertically and horizontally */
+        .center-container {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Style for the password box */
+        .password-box {
+            background: #fff;
+            padding: 2rem 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .password-box h2 {
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+
+        .password-box input[type="password"] {
+            padding: 0.7rem;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .password-box button {
+            padding: 0.7rem 2rem;
+            background: #eeacd0;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .password-box button:hover {
+            background: #8c98a5;
+        }
+
+        .error-message {
+            color: #d9534f;
+            margin-top: 1rem;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="center-container">
+        <form class="password-box" id="passwordForm" autocomplete="off">
+            <h2>you need the password!</h2>
+            <input type="password" id="passwordInput" placeholder="Password" required>
+            <br>
+            <button type="submit">let's see!</button>
+            <div class="error-message" id="errorMsg">noooooo T^T </div>
+        </form>
+    </div>
+    <script>
+        // Example password check (replace 'yourpassword' with your actual password)
+        const correctPassword = '0513';
+        const form = document.getElementById('passwordForm');
+        const input = document.getElementById('passwordInput');
+        const errorMsg = document.getElementById('errorMsg');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            if (input.value === correctPassword) {
+                // Redirect or show content
+                alert('Yay!');
+                // window.location.href = 'yourpage.html';
+            } else {
+                errorMsg.style.display = 'block';
+                input.value = '';
+                input.focus();
+            }
+        });
+    </script>
+</body>
+</html>
